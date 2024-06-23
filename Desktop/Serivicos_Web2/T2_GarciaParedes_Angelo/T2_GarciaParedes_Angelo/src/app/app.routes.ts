@@ -6,12 +6,13 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { Caso1Component } from './dashboard/caso-1/caso-1.component';
 import { Caso2Component } from './dashboard/caso-2/caso-2.component';
 import { Caso3Component } from './dashboard/caso-3/caso-3.component';
+import { authGuard } from './auth.guard';
 
 
 export const routes: Routes = [
     {path: "login", component: LoginComponent},
    {path: "dashboard", component: DashboardComponent,
-    
+        canActivate: [authGuard],
         children: [
             {path: "home", component: HomeComponent},
             {path: "caso-1", component: Caso1Component},

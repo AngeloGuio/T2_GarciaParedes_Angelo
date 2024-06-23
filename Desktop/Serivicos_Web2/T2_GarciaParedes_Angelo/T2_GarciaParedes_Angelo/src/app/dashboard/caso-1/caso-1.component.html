@@ -1,1 +1,28 @@
-<p>caso-1 works!</p>
+<mat-card appearance="outlined">
+    <mat-card-header>
+      <mat-card-title>CASO1</mat-card-title>
+    </mat-card-header>
+    
+    <mat-card-content>
+        <div class="form">
+            <mat-form-field>
+                <mat-label>Ingrese Sueldo</mat-label>
+                <input matInput type="number"   >
+              </mat-form-field>
+             <mat-form-field >
+                <mat-label>Años trabajados</mat-label>
+                <input matInput type="number"  >
+              </mat-form-field>
+        </div>        
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button (click)="calcularUtilidad()">CALCULAR</button>
+      <hr />
+      
+        <div class="alert alert-primary" role="alert">
+            {{resultadoFinal}}
+        </div>
+
+    <hr />
+    </mat-card-actions>
+  </mat-card>
