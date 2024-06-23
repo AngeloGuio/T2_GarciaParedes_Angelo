@@ -1,1 +1,34 @@
-<p>caso-3 works!</p>
+<mat-card appearance="outlined">
+    <mat-card-header>
+      <mat-card-title>Control de Alcoholemia</mat-card-title>
+    </mat-card-header>
+  
+    <mat-card-content>
+      <div class="form">
+        <mat-form-field appearance="fill">
+          <mat-label>Tipo de Vehículo</mat-label>
+          <mat-select   name="tipoVehiculo" required>
+            <mat-option value="C">Camión</mat-option>
+            <mat-option value="A">Autobús</mat-option>
+            <mat-option value="T">Turismo</mat-option>
+            <mat-option value="M">Motocicleta</mat-option>
+          </mat-select>
+        </mat-form-field>
+  
+        <mat-form-field appearance="fill">
+          <mat-label>Tasa de Alcohol</mat-label>
+          <input matInput type="number"  name="tasaAlcohol" required>
+        </mat-form-field>
+      </div>        
+    </mat-card-content>
+    
+    <mat-card-actions>
+      <button mat-raised-button color="primary" (click)="calcularResultado()">Calcular</button>
+    </mat-card-actions>
+    
+    <mat-card-content *ngIf="resultado !== null">
+      <div class="alert alert-primary" role="alert">
+        El resultado del control de alcoholemia es: {{ resultado }}
+      </div>
+    </mat-card-content>
+  </mat-card>
