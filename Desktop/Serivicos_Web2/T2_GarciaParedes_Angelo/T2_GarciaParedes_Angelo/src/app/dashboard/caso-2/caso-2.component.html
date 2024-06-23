@@ -1,1 +1,24 @@
-<p>caso-2 works!</p>
+<mat-card appearance="outlined">
+    <mat-card-header>
+      <mat-card-title>Calculadora de Matrícula</mat-card-title>
+    </mat-card-header>
+  
+    <mat-card-content>
+      <div class="form">
+        <mat-form-field appearance="fill">
+          <mat-label>Número de Materias</mat-label>
+          <input matInput type="number" name="numeroMaterias" required>
+        </mat-form-field>
+      </div>        
+    </mat-card-content>
+    
+    <mat-card-actions>
+      <button mat-raised-button color="primary" (click)="calcularMatricula()">Calcular</button>
+    </mat-card-actions>
+    
+    <mat-card-content *ngIf="totalMatricula !== null">
+      <div class="alert alert-primary" role="alert">
+        El costo total de la matrícula es: {{ totalMatricula }}
+      </div>
+    </mat-card-content>
+  </mat-card>
