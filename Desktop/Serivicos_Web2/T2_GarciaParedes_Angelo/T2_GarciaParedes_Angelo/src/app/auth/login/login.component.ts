@@ -23,9 +23,14 @@ export class LoginComponent {
   submit(usuario: HTMLInputElement,
     password: HTMLInputElement
   ):void{
+    if(usuario.value=="Garcia" && password.value=="12345"){
     this.authService.login(usuario.value,password.value);
     this.router.navigateByUrl("/dashboard");
   }
+  else{ this.router.navigateByUrl("/auth/login")
+
+  }
+}
 
 
 }
