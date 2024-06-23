@@ -1,28 +1,19 @@
-<mat-card appearance="outlined">
-    <mat-card-header>
-      <mat-card-title>CASO1</mat-card-title>
-    </mat-card-header>
-    
-    <mat-card-content>
-        <div class="form">
-            <mat-form-field>
-                <mat-label>Ingrese Sueldo</mat-label>
-                <input matInput type="number"   >
-              </mat-form-field>
-             <mat-form-field >
-                <mat-label>Años trabajados</mat-label>
-                <input matInput type="number"  >
-              </mat-form-field>
-        </div>        
-    </mat-card-content>
-    <mat-card-actions>
-      <button mat-raised-button (click)="calcularUtilidad()">CALCULAR</button>
-      <hr />
-      
-        <div class="alert alert-primary" role="alert">
-            {{resultadoFinal}}
-        </div>
+<div class="container">
+  <h2>Calculadora de Utilidades</h2>
+  <form (ngSubmit)="calcularUtilidad()">
+    <mat-form-field appearance="fill">
+      <mat-label>Salario Mensual</mat-label>
+      <input matInput type="number" [(ngModel)]="salario" name="salario" required>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Años Trabajados</mat-label>
+      <input matInput type="number" [(ngModel)]="anosTrabajados" name="anosTrabajados" required>
+    </mat-form-field>
+    <button mat-raised-button color="primary" type="submit">Calcular</button>
+  </form>
 
-    <hr />
-    </mat-card-actions>
-  </mat-card>
+  <div *ngIf="utilidad !== null">
+    <h3>Utilidad Calculada:</h3>
+    <p>{{ utilidad | currency }}</p>
+  </div>
+</div>

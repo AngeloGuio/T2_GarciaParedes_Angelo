@@ -7,7 +7,7 @@
       <div class="form">
         <mat-form-field appearance="fill">
           <mat-label>Tipo de Vehículo</mat-label>
-          <mat-select #tipoVehiculo name="tipoVehiculo" required>
+          <mat-select [(ngModel)]="tipoVehiculo" name="tipoVehiculo" required>
             <mat-option value="C">Camión</mat-option>
             <mat-option value="A">Autobús</mat-option>
             <mat-option value="T">Turismo</mat-option>
@@ -17,7 +17,7 @@
   
         <mat-form-field appearance="fill">
           <mat-label>Tasa de Alcohol</mat-label>
-          <input matInput type="number" #tasaAlcohol name="tasaAlcohol" required>
+          <input matInput type="number" [(ngModel)]="tasaAlcohol" name="tasaAlcohol" required>
         </mat-form-field>
       </div>        
     </mat-card-content>

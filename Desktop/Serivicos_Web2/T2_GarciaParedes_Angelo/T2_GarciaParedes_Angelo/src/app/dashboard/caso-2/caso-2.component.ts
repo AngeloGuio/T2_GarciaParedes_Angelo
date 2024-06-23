@@ -1,10 +1,12 @@
 import { Component } from '@angular/core';
 import { MaterialModule } from '../../angular-material/material/material.module';
+import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-caso-2',
   standalone: true,
-  imports: [MaterialModule],
+  imports: [MaterialModule, FormsModule, CommonModule],
   templateUrl: './caso-2.component.html',
   styleUrl: './caso-2.component.css'
 })
